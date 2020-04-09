@@ -1,15 +1,17 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 
+import PublicRoute from './components/PublicRoute'
+import PrivateRoute from './components/PrivateRoute'
 import Login from './components/Login'
 import Layout from './components/Layout'
 
 function App() {
   return (
     <Switch>
-      <Route exact path='/login' component={Login} />
+      <PublicRoute exact path='/login' component={Login} />
 
-      <Route component={Layout} />
+      <PrivateRoute component={Layout} />
     </Switch>
   );
 }
