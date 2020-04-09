@@ -1,16 +1,11 @@
 class UserController < ApplicationController
-  # before_action :authenticate_user
-
   def profile
-    current_user = User.find(1)
-
     @user = current_user
   end
 
   def send_money
     validate_send_params
-    current_user = User.find(1)
-
+    
     @user = current_user.send_money!(send_params[:email], send_params[:amount])
 
     render :profile

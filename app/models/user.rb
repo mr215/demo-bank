@@ -7,10 +7,11 @@ class User < ApplicationRecord
   def send_money!(email, amount)
     recipient = User.find_by_email!(email)
 
-    # User.transaction do
-    #   john.update!(money: john.money + 100)
-    #   ted.update!(money: ted.money - 100)
-    # end
+    User.transaction do
+      self.update!(balance: self.balance - amount)
+      recipient.update!(balance: recipient.balance + amount)
+    end
+    
     self
   end
 end
