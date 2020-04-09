@@ -5,20 +5,22 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+# Ruby version
+2.7
 
-* System dependencies
+# Node version
+12
 
-* Configuration
+# Deployment instructions
 
-* Database creation
+1. Install gems
 
-* Database initialization
+```
+bundle install
+```
 
-* How to run the test suite
+2. Start app
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+foreman start
+```
