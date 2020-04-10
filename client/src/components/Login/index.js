@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Alert, Card, CardBody, Form, FormGroup, Label, Input, Button, Spinner } from 'reactstrap';
-import axios from 'axios'
+
+import { login } from '../../api'
 
 const Login = ({ history }) => {
   const [loading, setLoading] = useState(false)
@@ -39,7 +40,7 @@ const Login = ({ history }) => {
 
     setLoading(true)
 
-    axios.post( '/api/token', { auth: { email, password } })
+    login(email, password)
       .then(({ data }) => {
         localStorage.setItem('token', data.jwt)
 
