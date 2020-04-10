@@ -1,5 +1,15 @@
 import React, { useState } from 'react'
-import { Alert, Card, CardBody, Form, FormGroup, Label, Input, Button, Spinner } from 'reactstrap';
+import {
+  Alert,
+  Card,
+  CardBody,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Button,
+  Spinner
+} from 'reactstrap';
 
 import { login } from '../../api'
 
@@ -56,12 +66,13 @@ const Login = ({ history }) => {
   }
 
   return (
-    <div style={{ width: 400, margin: '100px auto' }}>
+    <div style={{ width: 400, margin: '200px auto' }}>
       {error && <Alert color="danger">{error}</Alert>}
 
       <Card>
         <CardBody>
-          <h1 className="text-center">Login</h1>
+          <h2 className="text-center">Login</h2>
+
           <Form>
             <FormGroup>
               <Label for="email">Email</Label>

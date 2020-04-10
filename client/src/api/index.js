@@ -25,3 +25,8 @@ export const login = (email, password) => axiosInstance.post(
 )
 
 export const fetchProfile = () => axiosInstance.get('/api/profile')
+
+export const sendMoney = (email, amount) => axiosInstance.post('/api/send_money', {
+  email,
+  amount
+})

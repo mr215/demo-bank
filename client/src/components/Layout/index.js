@@ -30,10 +30,14 @@ const Layout = ({ history }) => {
       <Menu email={profile.email} logout={handleLogout} />
 
       <Container className="pt-3">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route component={NotFound} />
-        </Switch>
+      {
+        profile.id &&
+          <Switch>
+            <Route exact path="/" render={
+              props => <Home {...props} profile={profile} onUpdate={setProfile} />} />
+            <Route component={NotFound} />
+          </Switch>
+      }
       </Container>
     </>
   )
